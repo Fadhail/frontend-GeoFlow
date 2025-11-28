@@ -23,7 +23,6 @@ interface UserIdModalProps {
 
 export function UserIdModal({
   open,
-  onOpenChange,
   onSubmit,
   isValidating,
   error,
@@ -55,12 +54,12 @@ export function UserIdModal({
   }, [open]);
 
   return (
-    <Dialog open={open} onOpenChange={() => {}}>
+    <Dialog open={open} onOpenChange={() => { }}>
       <DialogContent className="pointer-events-auto" onPointerDown={(e) => e.stopPropagation()}>
         <DialogHeader>
           <DialogTitle>Input Your User ID</DialogTitle>
           <DialogDescription>
-            Select a user to view tracking history
+            Select a user to view tracking history, or you can use <span className="font-semibold">public_user</span> to see sample data.
           </DialogDescription>
         </DialogHeader>
 
@@ -71,7 +70,7 @@ export function UserIdModal({
               <Input
                 ref={inputRef}
                 type="text"
-                placeholder="e.g., user123, john_doe"
+                placeholder="public_user"
                 value={inputValue}
                 onChange={handleInputChange}
                 disabled={isValidating}
@@ -85,7 +84,7 @@ export function UserIdModal({
           </div>
 
           <DialogDescription>
-              Before you can view your tracking data, please create your tracker <a href="https://fadhail.github.io/mobile-GeoFlow/" className='text-blue-600 underline'>here</a>. or download app from <a href="#" className='text-blue-600 underline'>Google Play Store</a>.
+            Before you can view your tracking data, please create your tracker <a href="https://fadhail.github.io/mobile-GeoFlow/" className='text-blue-600 underline'>here</a>. or download app from <a href="#" className='text-blue-600 underline'>Google Play Store</a>.
           </DialogDescription>
 
           <DialogFooter className="gap-2">

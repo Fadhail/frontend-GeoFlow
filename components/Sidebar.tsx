@@ -1,7 +1,6 @@
 'use client';
 
 import React from 'react';
-import { Button } from '@/components/ui/button';
 
 interface SidebarProps {
   userId: string;
@@ -14,13 +13,10 @@ interface SidebarProps {
 }
 
 export function Sidebar({
-  userId,
-  onChangeUser,
   locationCount,
   lastUpdate,
   isLoading,
   isOpen,
-  onToggle,
 }: SidebarProps) {
   const formattedLastUpdate = lastUpdate
     ? lastUpdate.toLocaleTimeString('id-ID')
